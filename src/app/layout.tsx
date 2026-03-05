@@ -21,14 +21,30 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: {
-    default: `${SITE_NAME} - ${SITE_DESCRIPTION}`,
+    default: `${SITE_NAME} - 法務文書をAIで自動生成｜プライバシーポリシー・利用規約・AI利用ポリシー`,
     template: `%s | ${SITE_NAME}`,
   },
-  description: SITE_DESCRIPTION,
+  description:
+    "プライバシーポリシー、利用規約、AI利用ポリシーなど7種類の法務文書をAIが30秒で自動生成。業種別にカスタマイズ。無料・登録不要。日本法準拠。",
+  keywords: [
+    "プライバシーポリシー テンプレート",
+    "利用規約 作成",
+    "AI利用ポリシー 作り方",
+    "特定商取引法 表記 テンプレート",
+    "法務文書 自動生成",
+    "プライバシーポリシー 無料",
+    "利用規約 テンプレート 無料",
+    "Cookieポリシー 作成",
+    "生成AI ガイドライン テンプレート",
+  ],
   metadataBase: new URL(SITE_URL),
+  alternates: {
+    canonical: SITE_URL,
+  },
   openGraph: {
-    title: SITE_NAME,
-    description: SITE_DESCRIPTION,
+    title: "Policy AI - 法務文書をAIで自動生成",
+    description:
+      "プライバシーポリシー、利用規約、AI利用ポリシーなど7種類の法務文書をAIが30秒で自動生成。業種別にカスタマイズ。無料・登録不要。",
     url: SITE_URL,
     siteName: SITE_NAME,
     locale: "ja_JP",
@@ -36,12 +52,20 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: SITE_NAME,
-    description: SITE_DESCRIPTION,
+    title: "Policy AI - 法務文書をAIで自動生成",
+    description:
+      "プライバシーポリシー、利用規約、AI利用ポリシーなど7種類の法務文書をAIが30秒で自動生成。無料・登録不要。",
   },
   robots: {
     index: true,
     follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
   },
 };
 
