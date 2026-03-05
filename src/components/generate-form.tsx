@@ -182,6 +182,7 @@ export function GenerateForm({
             value={serviceName}
             onChange={(e) => setServiceName(e.target.value)}
             placeholder="例: MyShop、TechBlog"
+            maxLength={100}
             className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-lg text-white placeholder-white/30 focus:outline-none focus:border-blue-500/50 transition-all duration-200"
           />
         </div>
@@ -201,6 +202,7 @@ export function GenerateForm({
             onChange={(e) => setServiceDescription(e.target.value)}
             rows={3}
             placeholder="例: ハンドメイドアクセサリーのオンライン販売を行うECサイトです。"
+            maxLength={500}
             className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-lg text-white placeholder-white/30 focus:outline-none focus:border-blue-500/50 transition-all duration-200 resize-none"
           />
         </div>
@@ -220,6 +222,7 @@ export function GenerateForm({
             value={companyName}
             onChange={(e) => setCompanyName(e.target.value)}
             placeholder="例: 株式会社サンプル"
+            maxLength={100}
             className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-lg text-white placeholder-white/30 focus:outline-none focus:border-blue-500/50 transition-all duration-200"
           />
         </div>

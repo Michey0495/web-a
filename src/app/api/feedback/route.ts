@@ -1,11 +1,17 @@
 import { NextRequest, NextResponse } from "next/server";
 
 export async function POST(request: NextRequest) {
-  const { type, message, repo } = await request.json();
+  const { type, message } = await request.json();
 
   if (!message?.trim()) {
     return NextResponse.json({ error: "Message required" }, { status: 400 });
   }
+
+  if (message.length > 2000) {
+    return NextResponse.json({ error: "Message too long" }, { status: 400 });
+  }
+
+  const repo = "web-a";
 
   const labels: Record<string, string> = {
     bug: "bug",

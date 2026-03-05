@@ -15,6 +15,13 @@ export async function POST(req: NextRequest) {
       );
     }
 
+    if (body.serviceName.length > 100 || body.serviceDescription.length > 500) {
+      return Response.json(
+        { error: "入力が長すぎます" },
+        { status: 400 }
+      );
+    }
+
     if (!DOCUMENT_TYPES[body.documentType]) {
       return Response.json(
         { error: "無効な文書タイプです" },
