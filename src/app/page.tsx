@@ -1,10 +1,34 @@
 import Link from "next/link";
-import { DOCUMENT_TYPES, INDUSTRIES } from "@/lib/constants";
+import { DOCUMENT_TYPES, INDUSTRIES, SITE_NAME, SITE_DESCRIPTION, SITE_URL } from "@/lib/constants";
 import type { DocumentType, Industry } from "@/lib/types";
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  name: SITE_NAME,
+  description: SITE_DESCRIPTION,
+  url: SITE_URL,
+  applicationCategory: "BusinessApplication",
+  operatingSystem: "Web",
+  offers: {
+    "@type": "Offer",
+    price: "0",
+    priceCurrency: "JPY",
+  },
+  provider: {
+    "@type": "Organization",
+    name: "Ghostfee",
+    url: "https://github.com/Michey0495",
+  },
+};
 
 export default function Home() {
   return (
     <div className="max-w-5xl mx-auto px-4">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       {/* Hero */}
       <section className="py-24 md:py-32 text-center">
         <h1 className="text-3xl md:text-5xl font-bold text-white leading-tight tracking-tight">
