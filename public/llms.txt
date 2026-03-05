@@ -1,0 +1,42 @@
+# Policy AI
+
+> 法務文書、AIにおまかせ。あなたのサービスに合った規約を、30秒で。
+
+## Overview
+Policy AI は、Webサイト・アプリに必要な法務文書をAIで自動生成する日本語特化ツールです。
+業種とサービス内容を入力するだけで、プライバシーポリシー・利用規約・特商法表記等の法務文書をAIがカスタマイズ生成します。
+2026年の新需要「AI利用ポリシー/生成AIガイドライン」に完全対応。
+
+## Features
+- 7種類の法務文書をAI自動生成
+- 対応文書: プライバシーポリシー / 利用規約 / 特定商取引法表記 / AI利用ポリシー / 免責事項 / Cookieポリシー / 返品・返金ポリシー
+- 6業種対応: ECショップ / SaaS / ブログ / モバイルアプリ / フリーランス / その他
+- 日本の法律（個人情報保護法、特定商取引法、AI事業者ガイドライン）に準拠
+- テキスト / HTML / Markdown 形式で出力
+- ワンクリックでコピー
+- 無料で利用可能
+
+## Technical Stack
+- Framework: Next.js 15 (App Router)
+- Language: TypeScript
+- Styling: Tailwind CSS
+- AI: Anthropic Claude API
+- Hosting: Vercel
+
+## API
+- POST /api/generate - 法務文書をAI生成するエンドポイント（SSE streaming）
+
+## Pages
+- / - トップページ（サービス説明、対応文書一覧）
+- /generate - 文書生成ページ（フォーム + 結果表示）
+- /docs/{type} - 文書タイプ別解説ページ
+- /for/{industry} - 業種別解説ページ
+
+## Links
+- Website: https://policy.ezoai.jp
+- GitHub: https://github.com/Michey0495/web-a
+- Agent Card: https://policy.ezoai.jp/.well-known/agent.json
+
+## Contact
+- Developer: Ghostfee
+- GitHub: https://github.com/Michey0495

@@ -1,0 +1,70 @@
+{
+  "name": "Policy AI",
+  "description": "Webサイト・アプリに必要な法務文書（プライバシーポリシー、利用規約、AI利用ポリシー等）をAIで自動生成する日本語特化ツール",
+  "url": "https://policy.ezoai.jp",
+  "version": "1.0.0",
+  "capabilities": {
+    "streaming": true,
+    "pushNotifications": false
+  },
+  "provider": {
+    "organization": "Ghostfee",
+    "url": "https://github.com/Michey0495"
+  },
+  "documentationUrl": "https://policy.ezoai.jp/llms.txt",
+  "authentication": {
+    "schemes": ["none"]
+  },
+  "defaultInputModes": ["text"],
+  "defaultOutputModes": ["text"],
+  "skills": [
+    {
+      "id": "generate_legal_document",
+      "name": "法務文書生成",
+      "description": "業種とサービス情報に基づいて、プライバシーポリシー・利用規約・AI利用ポリシー等の法務文書をAIで自動生成する。日本の法律に準拠。",
+      "uri": "https://policy.ezoai.jp/api/generate",
+      "method": "POST",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "documentType": {
+            "type": "string",
+            "enum": ["privacy-policy", "terms", "tokushoho", "ai-policy", "disclaimer", "cookie-policy", "refund-policy"],
+            "description": "生成する文書のタイプ"
+          },
+          "industry": {
+            "type": "string",
+            "enum": ["ec", "saas", "blog", "app", "freelance", "other"],
+            "description": "サービスの業種"
+          },
+          "serviceName": {
+            "type": "string",
+            "description": "サービス名"
+          },
+          "serviceDescription": {
+            "type": "string",
+            "description": "サービスの概要説明"
+          },
+          "companyName": {
+            "type": "string",
+            "description": "会社名・運営者名（任意）"
+          },
+          "collectedData": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "enum": ["name", "email", "address", "phone", "payment", "cookie", "access_log"]
+            },
+            "description": "収集する個人情報の種類"
+          },
+          "format": {
+            "type": "string",
+            "enum": ["text", "html", "markdown"],
+            "description": "出力形式"
+          }
+        },
+        "required": ["documentType", "serviceName", "serviceDescription"]
+      }
+    }
+  ]
+}
