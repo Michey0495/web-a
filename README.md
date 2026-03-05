@@ -86,9 +86,15 @@ src/
 - [x] 業種別SEOランディングページ
 - [x] AI公開チャネル（llms.txt, agent.json, robots.txt）
 
+### Night 2 - 完了
+- [x] MCPサーバーエンドポイント（/api/mcp、JSON-RPC 2.0）
+- [x] フィードバックAPI + ウィジェット（GitHub Issues連携）
+- [x] Google Analytics対応（NEXT_PUBLIC_GA_ID）
+- [x] JSON-LD構造化データ（SEO）
+- [x] llms.txt / agent.json 更新
+
 ### Phase 2 (予定)
 - [ ] ユーザー登録・ログイン
 - [ ] 生成履歴の保存
 - [ ] PDF出力
-- [ ] MCPサーバーエンドポイント
 - [ ] Stripe決済連携
